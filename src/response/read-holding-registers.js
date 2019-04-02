@@ -100,7 +100,7 @@ class ReadHoldingRegistersResponseBody extends ModbusResponseBody {
       payload.writeUInt8(this._fc, 0)
       payload.writeUInt8(this._byteCount, 1)
       this._values.forEach(function (value, i) {
-        payload.writeUInt16BE(value, 2 + i)
+        payload.writeUInt16BE(value, 2 + i * 2)
       })
 
       return payload
